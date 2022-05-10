@@ -21,8 +21,6 @@ export default {
     height: 100%;
     padding: 0;
     margin: 0;
-    //display: flex;
-    flex-direction:column;
 
     overflow-y: scroll;
 }
@@ -32,10 +30,9 @@ header{
     background-color: #f00;
 }
 main{
-    flex:1fr;
     width: 100%;
-    //height: 100%;
-    height:5000px;
+    //height值会自动计算
+    height:100%;
     background-color: #0f0;
 }
 footer{

@@ -10,12 +10,14 @@
 ::-webkit-scrollbar-thumb{
 	background: #f6e38d;
 	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+	background: #f38f8f;
 	box-shadow:  0 0 10px rgba(0,0,0,.5);
 }
 
-::-webkit-scrollbar-thumb:hover,
 ::-webkit-scrollbar-thumb:active{
-	background: #f38f8f;
-	border-radius: 10px;
+	background: #fb4949;
 	box-shadow:  0 0 10px rgba(0,0,0,.5);
 }

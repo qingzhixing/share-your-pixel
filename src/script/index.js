@@ -1,2 +1,2 @@
-import "../style/global.scss";
+import "../style/scrollbar.scss";
 
