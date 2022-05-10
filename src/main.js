@@ -8,4 +8,9 @@ const app=createApp(App);
 import router from "./script/router/router";
 app.use(router);
 
+//NutUI
+import NutUI from "@nutui/nutui";
+import "@nutui/nutui/dist/style.css";
+app.use(NutUI);
+
 app.mount('#app');
