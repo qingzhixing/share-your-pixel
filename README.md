@@ -1,5 +1,8 @@
 # share-your-pixel
 
+### 项目介绍
+一个分享像素画的平台。
+
 ## Project setup
 ```
 npm install
