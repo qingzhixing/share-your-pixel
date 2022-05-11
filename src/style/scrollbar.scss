@@ -4,12 +4,13 @@
 }
 
 ::-webkit-scrollbar-track{
-	background: linear-gradient(to bottom, #a0c8c8, #88bfef, #867fe4);
+	background: linear-gradient(to bottom, #d594e4, #88bfef, #867fe4);
 }
 
 ::-webkit-scrollbar-thumb{
-	background: #f6e38d;
+	background: #b37575;
 	border-radius: 10px;
+	box-shadow:  0 0 5px rgba(0,0,0,.5);
 }
 
 ::-webkit-scrollbar-thumb:hover{

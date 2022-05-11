@@ -13,6 +13,14 @@
                     <router-link to="/discover">发现</router-link>
                 </div>
                 <div id="nav-bar-right">
+                    <nut-searchbar id="search-bar" v-model="searchValue" @search="search(searchValue)">
+                        <template v-slot:rightin>
+                            <nut-icon @click="search(searchValue)" size="20" name="search2" color="#3DB63D"/>
+                        </template>
+                    </nut-searchbar>
+
+                    <!--TODO:用公用组件代替Icon-->
+                    <nut-avatar id="user-avatar" icon="my" shape="square"/>
 
                 </div>
             </div>
@@ -24,13 +32,26 @@
 
 <script>
 
+import {ref} from "vue";
+
 export default {
     name: "HomePage",
     setup(){
-        //header
+        //search bar
+        const searchValue = ref('');
+        const search = function(searchValue){
+            if(searchValue.trim()===''){
+                return;
+            }
+            console.log("searching:"+searchValue);
+            //暂时用百度搜索接口代替网站搜索功能
+            window.open("https://www.baidu.com/s?wd="+searchValue);
+        }
 
         return{
-            //header
+            //search bar
+            searchValue,
+            search,
         }
     }
 }
@@ -75,6 +96,9 @@ header{
 
         #nav-bar-left{
             height:100%;
+
+            align-self: flex-start;
+
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -91,6 +115,27 @@ header{
             }
             a:active{
                 color: #757575;
+            }
+        }
+
+        #nav-bar-right {
+            padding-left: 30px;
+            height:100%;
+
+            align-self: flex-end;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            #search-bar{
+                height: 100%;
+                background-color:transparent;
+            }
+
+            #user-avatar{
+                height: 100%;
+                background-color: #bcbcbc;
             }
         }
     }
@@ -126,8 +171,8 @@ header{
 main{
     width: 100%;
     //height值会自动计算
-    height:100%;
-    background-color: #0f0;
+    height:300%;
+    background-color: #fdeded;
 }
 footer{
 
