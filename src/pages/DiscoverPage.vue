@@ -1,16 +1,15 @@
 <template>
     <div>
-        home page
+        discover page
     </div>
 </template>
 
 <script>
 export default {
-    name: "HomePage"
+    name: "DiscoverPage"
 }
 </script>
 
 <style scoped>
 
 </style>
-

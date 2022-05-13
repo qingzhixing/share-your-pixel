@@ -1,9 +1,24 @@
 import {createRouter, createWebHashHistory} from "vue-router";
-import HomePage from "@/pages/HomePage";
+import MainPage from "@/pages/MainPage";
 import TestPage from "@/pages/TestPage";
+import HomePage from "@/pages/HomePage";
+import DiscoverPage from "@/pages/DiscoverPage";
 
 const routes=[
-    {path: '/', component: HomePage},
+    {
+        path: '/',
+        component: MainPage,
+        children: [
+            {
+                path: '',
+                component: HomePage
+            },
+            {
+                path: '/discover',
+                component: DiscoverPage
+            },
+        ],
+    },
     {path: '/test', component: TestPage},
 ];
 
