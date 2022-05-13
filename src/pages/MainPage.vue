@@ -13,14 +13,18 @@
                     <router-link to="/discover">发现</router-link>
                 </div>
                 <div id="nav-bar-right">
-                    <nut-searchbar id="search-bar" v-model="searchValue" @search="search(searchValue)">
-                        <template v-slot:rightin>
-                            <nut-icon @click="search(searchValue)" size="20" name="search2" color="#3DB63D"/>
-                        </template>
-                    </nut-searchbar>
+                    <a-input-search id="search-bar" placeholder="Enter something" v-model="inputSearchValue" @search="search(inputSearchValue)" @keydown.enter="search(inputSearchValue)"/>
 
-                    <!--TODO:用公用组件代替Icon-->
-                    <InfoDisplayAvatar id="user-avatar"/>
+                    <div id="user-avatar">
+                        <a-popover>
+                            <a-avatar :style="{ backgroundColor: '#3370ff' }">
+                                <IconUser />
+                            </a-avatar>
+                            <template #content>
+                                NULL
+                            </template>
+                        </a-popover>
+                    </div>
 
                 </div>
             </div>
@@ -30,7 +34,9 @@
                 <router-view></router-view>
             </div>
         </main>
-        <footer></footer>
+        <footer>
+            footer
+        </footer>
     </div>
 </template>
 
@@ -38,16 +44,13 @@
 
 import {ref} from "vue";
 
-import InfoDisplayAvatar from "@/components/InfoDisplayAvatar";
-
 export default {
     name: "HomePage",
     components: {
-        InfoDisplayAvatar
     },
     setup(){
         //search bar
-        const searchValue = ref('');
+        const inputSearchValue = ref('');
         const search = function(searchValue){
             if(searchValue.trim()===''){
                 return;
@@ -59,7 +62,7 @@ export default {
 
         return{
             //search bar
-            searchValue,
+            inputSearchValue,
             search,
         }
     }
@@ -165,12 +168,12 @@ header{
             align-items: center;
 
             #search-bar{
-                height: 100%;
-                background-color:transparent;
+                height: 90%;
+                border-radius: 15px;
             }
 
             #user-avatar{
-                height: 100%;
+                padding-left: 10px;
             }
         }
     }
