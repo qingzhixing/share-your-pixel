@@ -8,7 +8,7 @@ const app=createApp(App);
 import router from "./script/router/router";
 app.use(router);
 
-//ArcoDesign
+//Arco Design
 import ArcoVue from '@arco-design/web-vue';
 import '@arco-design/web-vue/dist/arco.css';
 app.use(ArcoVue);

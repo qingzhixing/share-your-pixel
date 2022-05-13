@@ -100,6 +100,14 @@ header{
         background-color: #5a4f4f;
 
         width:300px;
+        @media (max-width: 750px) {
+            width:100px;
+        }
+
+        @media (max-width:360px){
+            width:50px;
+        }
+
         height:100%;
 
         display: flex;
@@ -113,8 +121,17 @@ header{
             padding-left: 10px;
             width: 70px;
             height: 70px;
+
+            @media (max-width:360px){
+                width: 50px;
+                height: 50px;
+                padding-left:0;
+            }
         }
         #website-name{
+            @media (max-width: 750px) {
+                display: none;
+            }
             //margin-left: 10px;
             width: 100%;
             text-align: center;
@@ -125,6 +142,13 @@ header{
     #nav-bar{
         //宽度=100%-左侧网站信息显示宽度-padding
         width: calc(100% - 300px - 10px);
+        @media (max-width: 750px) {
+            width: calc(100% - 100px - 10px);
+        }
+        @media (max-width:360px){
+            width: calc(100% - 50px - 10px);
+        }
+
         height: 100%;
         padding-left: 10px;
 
@@ -146,6 +170,11 @@ header{
             a{
                 font-size:20px;
                 padding-left:20px;
+                @media (max-width: 600px) {
+                    font-size:15px;
+                    padding-left:6px;
+                }
+
                 text-decoration-line: none;
                 color: #fff;
             }
@@ -158,7 +187,7 @@ header{
         }
 
         #nav-bar-right {
-            padding-left: 30px;
+            padding-left: 5px;
             height:100%;
 
             align-self: flex-end;
@@ -170,6 +199,10 @@ header{
             #search-bar{
                 height: 90%;
                 border-radius: 15px;
+                @media (max-width: 510px) {
+                    width:100px;
+                    //font-size:5px;
+                }
             }
 
             #user-avatar{
