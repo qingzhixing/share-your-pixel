@@ -1,9 +1,10 @@
 <template>
-    <nut-popover v-model:list="popoverList" @open="open">
-        <template #reference>
-            <nut-avatar icon="my" shape="square"></nut-avatar>
+    <a-popover :position="bottom">
+        <nut-avatar icon="my" shape="square"></nut-avatar>
+        <template #content>
+
         </template>
-    </nut-popover>
+    </a-popover>
 </template>
 
 <script>
