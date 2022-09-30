@@ -1,4 +1,4 @@
-# share-your-pixel
+# share-your-pixel(更新停滞)
 
 ### 项目介绍
 一个分享像素画的平台。
